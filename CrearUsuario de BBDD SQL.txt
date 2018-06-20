@@ -1,0 +1,13 @@
+CREATE DATABASE soundclub;
+
+USE mysql;
+
+CREATE USER 'soundclub_user'@'localhost' IDENTIFIED BY 'sc123';
+GRANT ALL PRIVILEGES ON soundclub.* TO 'soundclub_user'@'localhost';
+FLUSH PRIVILEGES;
+
+USE soundclub;
+
+
+
+
