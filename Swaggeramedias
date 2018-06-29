@@ -1,0 +1,38 @@
+/pais:
+    get:
+      tags:
+      - "pais"
+      description: "Obtener lista de paises"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Lista de paises obtenida"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/ApiResponse"
+    post:
+      tags:
+      - "pais"
+      summary: "Lista de paises"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Devuelve la lista de paises."
+        required: true
+        schema:
+          $ref: "#/definitions/Pais"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/ApiResponse"
