@@ -90,8 +90,6 @@ paths:
       tags:
       - "pais"
       description: "Obtener lista de paises"
-      consumes:
-      - "application/json"
       produces:
       - "application/json"
       responses:
@@ -101,62 +99,16 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/ApiResponse"
-    post:
-      tags:
-      - "pais"
-      summary: "Lista de paises"
-      consumes:
-      - "application/json"
-      produces:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Devuelve la lista de paises."
-        required: true
-        schema:
-          $ref: "#/definitions/Pais"
-      responses:
-        200:
-          description: "OK"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/ApiResponse"
 /genero_musical:
     get:
       tags:
       - "genero_musical"
       description: "Obtener lista de genero_musical"
-      consumes:
-      - "application/json"
       produces:
       - "application/json"
       responses:
         200:
           description: "Lista de genero_musical obtenida"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/ApiResponse"
-    post:
-      tags:
-      - "genero_musical"
-      summary: "Lista de genero_musical"
-      consumes:
-      - "application/json"
-      produces:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Devuelve la lista de genero_musical."
-        required: true
-        schema:
-          $ref: "#/definitions/Genero_musical"
-      responses:
-        200:
-          description: "OK"
           schema:
             type: "array"
             items:
@@ -294,7 +246,6 @@ paths:
       description: "devuelve un pais"
       operationId: "getPaisById"
       produces:
-      - "application/xml"
       - "application/json"
       parameters:
       - name: "paisId"
@@ -307,7 +258,7 @@ paths:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Pais"
+            $ref: "#/definitions/ApiResponse"
   /genero_musical/{genero_musicalId}:
     get:
       tags:
@@ -316,7 +267,6 @@ paths:
       description: "devuelve un genero_musical"
       operationId: "getgGenero_musicalById"
       produces:
-      - "application/xml"
       - "application/json"
       parameters:
       - name: "genero_musicalId"
@@ -329,7 +279,7 @@ paths:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Genero_musical"
+            $ref: "#/definitions/ApiResponse"
   /instrumento/{instrumentoId}:
     get:
       tags:
@@ -338,7 +288,6 @@ paths:
       description: "devuelve un instrumento"
       operationId: "getInstrumentoById"
       produces:
-      - "application/xml"
       - "application/json"
       parameters:
       - name: "instrumentoId"
